@@ -43,6 +43,7 @@ def ingest_document(file_path: str, filename: str) -> dict:
     
     # 3. Agregar metadata a cada chunk
     for chunk in chunks:
+        chunk.page_content = " ".join(chunk.page_content.split())
         chunk.metadata["document_id"] = document_id
         chunk.metadata["filename"] = filename
     
