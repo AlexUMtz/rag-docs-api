@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Docs API</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <header class="sidebar-header">
+          <span class="sidebar-title">Documentos</span>
+        </header>
+
+        <label class="upload-btn" for="file-input">
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 2v8M5 5l3-3 3 3M3 11v1.5A1.5 1.5 0 004.5 14h7a1.5 1.5 0 001.5-1.5V11"
+              stroke="#dbeafe"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Subir documento
+        </label>
+
+        <input
+          type="file"
+          id="file-input"
+          accept=".pdf"
+          style="display: none"
+        />
+
+        <nav class="doc-list" id="doc-list">
+          <p class="doc-empty" id="doc-empty">
+            No hay documentos. Sube un PDF para comenzar.
+          </p>
+        </nav>
+      </aside>
+
+      <main class="main">
+      <header class="main-header">
+        <span class="main-title">Pregunta sobre tus documentos</span>
+        <span class="doc-badge" id="doc-badge" style="display:none"></span>
+      </header>
+
+      <section class="chat-area" id="chat-area" aria-live="polite">
+        <p class="welcome">
+          Sube un documento y haz preguntas sobre su contenido.
+        </p>
+      </section>
+
+      <footer class="input-area">
+        <div class="input-row">
+          <textarea
+            id="question-input"
+            class="question-input"
+            placeholder="Escribe tu pregunta..."
+            rows="1"
+            aria-label="Escribe tu pregunta"
+          ></textarea>
+          <button class="send-btn" id="send-btn" aria-label="Enviar pregunta">
+            <svg viewBox="0 0 16 16">
+              <path d="M2 8l12-6-6 12V9L2 8z" fill="#dbeafe" />
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
